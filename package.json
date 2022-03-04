@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/ABCarrigan/PokeExpress/issues"
   },
-  "homepage": "https://github.com/ABCarrigan/PokeExpress#readme"
+  "homepage": "https://github.com/ABCarrigan/PokeExpress#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-react-views": "^0.11.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  }
 }
