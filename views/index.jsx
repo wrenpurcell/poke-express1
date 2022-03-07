@@ -4,8 +4,8 @@ const headerStyle = {
     color: '#ffffff',
     backgroundColor: '#960606',
 }
-const pokeItems = pokemon.map((pokeItem)=>{
-    return <li style={{textTransform:'capitalize'}}>{pokeItem.name}</li>
+const pokeItems = pokemon.map((pokeItem, i)=>{
+    return <li style={{textTransform:'capitalize'}}><a href={`/pokemon/${i}`}>{pokeItem.name}</a></li>
 })
 
 class Index extends React.Component {
