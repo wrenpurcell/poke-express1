@@ -1,14 +1,24 @@
 const React = require('react')
+const pokemon = require('../models/pokemon')
 const headerStyle = {
     color: '#ffffff',
     backgroundColor: '#960606',
 }
+const pokeItems = pokemon.map((pokeItem)=>{
+    return <li style={{textTransform:'capitalize'}}>{pokeItem.name}</li>
+})
 
-class Show extends React.Component {
+class Index extends React.Component {
+
    render () {
     return (
-<h1 style ={headerStyle}>See all the Pokemon!</h1>
+        <div>
+            <h1 style ={headerStyle}>See all the Pokemon!</h1>
+                <ul> 
+                {pokeItems}
+                </ul> 
+        </div>
      )
     }
  }
- module.exports = Show
+ module.exports = Index
