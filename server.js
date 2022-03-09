@@ -1,11 +1,7 @@
 require('dotenv').config()
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
-  });
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose')
 const port = 3000
 const pokemon = require('./models/pokemon.js')
 
@@ -28,6 +24,11 @@ app.get('/pokemon/new', (req, res)=>{
 app.post('/pokemon/', (req, res)=>{
     res.send('received');
 });
+
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connection.once('open', ()=> {
+    console.log('connected to mongo');
+})  
 
 app.listen(port,() => {
     console.log('listening on port' , port)
