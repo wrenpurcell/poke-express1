@@ -1,16 +1,15 @@
 const React = require('react')
-const pokemon = require('../models/pokemon')
+
 const headerStyle = {
     color: '#ffffff',
     backgroundColor: '#960606',
 }
-const pokeItems = pokemon.map((pokeItem, i)=>{
-    return <li style={{textTransform:'capitalize'}}><a href={`/pokemon/${i}`}>{pokeItem.name}</a></li>
-})
 
 class Index extends React.Component {
-
-   render () {
+   render() {
+    const pokeItems = this.props.pokemon.map((pokeItem, i)=>{
+        <li style={{textTransform:'capitalize'}}><a href={`/pokemon/${i}`}>{pokeItem.name}</a></li>
+    })    
     return (
         <div>
             <h1 style ={headerStyle}>See all the Pokemon!</h1>
